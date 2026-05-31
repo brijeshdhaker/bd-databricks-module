@@ -1,0 +1,12 @@
+channels:
+- conda-forge
+dependencies:
+- python=3.13.13
+- pip
+- pip:
+  - mlflow==3.12.0
+  - langgraph==1.2.2
+  - mcp==1.26.0
+  - databricks-mcp==0.9.0
+  - databricks-langchain==0.19.0
+name: mlflow-env
