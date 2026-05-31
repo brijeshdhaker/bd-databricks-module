@@ -1,0 +1,20 @@
+[project]
+name = "bd-databricks-module"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai>=1.14.6",
+    "databricks-agents>=1.10.2",
+    "databricks-langchain>=0.19.0",
+    "databricks-sdk>=0.112.0",
+    "databricks-sql-connector>=4.2.6",
+    "databricks-sqlalchemy>=2.0.9",
+    "ipykernel>=7.2.0",
+    "ipywidgets>=8.1.8",
+    "langchain-openai>=1.2.2",
+    "mlflow>=3.12.0",
+    "sqlalchemy>=2.0.50",
+    "unitycatalog-ai[databricks]>=0.3.2",
+]

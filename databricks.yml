@@ -1,0 +1,13 @@
+resources:
+  apps:
+    my_agent_app:
+      resources:
+        - name: 'my_uc_function'
+          uc_securable:
+            securable_full_name: 'workspace.default.a_number'
+            securable_type: 'FUNCTION'
+            permission: 'EXECUTE'
+        - name: 'Bakehouse Sales Starter Space'
+          genie_space:
+            space_id: '01f09dad81ae105b9cd77cec8660f37c'
+            permission: 'CAN_RUN'            
