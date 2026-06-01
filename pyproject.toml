@@ -3,10 +3,22 @@ name = "bd-databricks-module"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.10,<3.14"
+requires-python = ">=3.10,<3.13"
+
 dependencies = [
+    # Any dependencies for jobs and pipelines in this project can be added here
+    # See also https://docs.databricks.com/dev-tools/bundles/library-dependencies
+    #
+    # LIMITATION: for pipelines, dependencies are cached during development;
+    # add dependencies to the 'environment' section of your pipeline.yml file instead
+]
+
+[dependency-groups]
+dev = [
     "crewai>=1.14.6",
     "databricks-agents>=1.10.2",
+    "databricks-connect>=15.4,<15.5",
+    "databricks-dlt",
     "databricks-langchain>=0.19.0",
     "databricks-sdk>=0.112.0",
     "databricks-sql-connector>=4.2.6",
@@ -15,7 +27,26 @@ dependencies = [
     "ipywidgets>=8.1.8",
     "langchain-openai>=1.2.2",
     "mlflow>=3.12.0",
-    "pytest>=9.0.3",
+    "pytest",
+    "ruff",
     "sqlalchemy>=2.0.50",
     "unitycatalog-ai[databricks]>=0.3.2",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest"
+]
+
+[project.scripts]
+main = "com.example.databricks.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 120
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/main/py"]
