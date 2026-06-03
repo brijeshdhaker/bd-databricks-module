@@ -31,6 +31,15 @@ dev = [
     "ruff",
     "sqlalchemy>=2.0.50",
     "unitycatalog-ai[databricks]>=0.3.2",
+    "databricks-cli>=0.18.0",
+    "faiss-cpu>=1.14.2",
+    "faker>=40.21.0",
+    "langchain-chroma>=1.0.0",
+    "langchain-huggingface>=1.2.2",
+    "langchain-ollama>=1.1.0",
+    "langchain-groq>=1.1.2",
+    "pypdf>=6.12.2",
+    "sentence-transformers>=5.5.1",
 ]
 
 [project.optional-dependencies]
@@ -49,4 +58,13 @@ build-backend = "hatchling.build"
 line-length = 120
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/main/py"]
+packages = ["src/com"]
+
+[tool.pytest.ini_options]
+# Define one or more test directories
+testpaths = ["."]
+pythonpath = [
+    "src", 
+    "lib", 
+    "resources"
+]

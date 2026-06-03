@@ -15,13 +15,11 @@
     "python-envs.defaultPackageManager": "ms-python.python:pip",
     
     "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
-    "python.autoComplete.extraPaths": [
-        "${workspaceFolder}/src/main/py"
-    ],
+    "python.autoComplete.extraPaths": ["src", "lib", "resources"],
 
     "python.analysis.typeCheckingMode": "off",
     "python.analysis.autoImportCompletions": true,
-    "python.analysis.extraPaths": ["${workspaceFolder}/src/main/py", "lib", "resources"],
+    "python.analysis.extraPaths": ["src", "lib", "resources"],
     "python.analysis.diagnosticMode": "workspace",
     "python.analysis.stubPath": ".vscode",
 
@@ -29,19 +27,19 @@
     "python.terminal.useEnvFile": true,
     "python.terminal.activateEnvironment": true,
     "terminal.integrated.env.linux": {
-        "PYTHONPATH": "${workspaceFolder}/src/main/py:${env:PYTHONPATH}"
+        "PYTHONPATH": "${workspaceFolder}/src:${workspaceFolder}/lib:${workspaceFolder}/resources:${env:PYTHONPATH}"
     },
 
 
     "python.testing.autoTestDiscoverOnSaveEnabled": true,
-    "python.testing.cwd": "${workspaceFolder}/src/test/py",
+    "python.testing.cwd": "${workspaceFolder}",
     "python.testing.unittestEnabled": false,
     "python.testing.unittestArgs": [
-        "-v", "-s", "${workspaceFolder}/src/test/py", "-p", "Test*.py"
+        "-v", "-s", "${workspaceFolder}/tests", "-p", "Test*.py"
     ],
     "python.testing.pytestEnabled": true,
     "python.testing.pytestArgs": [
-        "${workspaceFolder}/src/test/py"
+        "."
     ],
 
     "chat.mcp.discovery.enabled": {
@@ -52,6 +50,10 @@
     },
     
     "jupyter.interactiveWindow.cellMarker.codeRegex": "^# COMMAND ----------|^# Databricks notebook source|^(#\\s*%%|#\\s*\\<codecell\\>|#\\s*In\\[\\d*?\\]|#\\s*In\\[ \\])",
-    "jupyter.interactiveWindow.cellMarker.default": "# COMMAND ----------"
-
+    "jupyter.interactiveWindow.cellMarker.default": "# COMMAND ----------",
+    
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+    },
 }

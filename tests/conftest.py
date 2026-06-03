@@ -1,6 +1,8 @@
 """This file configures pytest, initializes Databricks Connect, and provides fixtures for Spark and loading test data."""
 
-import os, sys, pathlib
+import os
+import sys
+import pathlib
 from contextlib import contextmanager
 
 
@@ -40,9 +42,9 @@ def load_fixture(spark: SparkSession):
             data = load_fixture("my_data.json")
             assert data.count() >= 1
     """
-
+    # __file__
     def _loader(filename: str):
-        path = pathlib.Path(__file__).parent.parent / "fixtures" / filename
+        path = pathlib.Path("src/test/py/conftest.py").parent.parent / "fixtures" / filename
         suffix = path.suffix.lower()
         if suffix == ".json":
             rows = json.loads(path.read_text())

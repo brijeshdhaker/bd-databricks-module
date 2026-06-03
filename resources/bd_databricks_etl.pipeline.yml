@@ -7,11 +7,11 @@ resources:
       catalog: ${var.catalog}
       schema: ${var.schema}
       serverless: true
-      root_path: "../src/main/py/com/example/databricks/etl"
+      root_path: "../src/com/example/databricks/etl"
 
       libraries:
         - glob:
-            include: ../src/main/py/com/example/databricks/etl/transformations/**
+            include: ../src/com/example/databricks/etl/transformations/**
 
       environment:
         dependencies:

@@ -3,6 +3,7 @@ from databricks.sdk.runtime import spark
 from com.example.databricks import taxis
 
 
+# com.example.databricks.main:main --catalog workspace --schema default
 def main():
     # Process command-line arguments
     parser = argparse.ArgumentParser(
@@ -11,7 +12,7 @@ def main():
     parser.add_argument("--catalog", required=True)
     parser.add_argument("--schema", required=True)
     args = parser.parse_args()
-
+    print(args)
     # Set the default catalog and schema
     spark.sql(f"USE CATALOG {args.catalog}")
     spark.sql(f"USE SCHEMA {args.schema}")

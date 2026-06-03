@@ -23,7 +23,7 @@ class ImageAnalysisTool:
       - query: a json string containing the following fields:
         - check (str): The check to be performed.
         - image_name (str): The name of the image to analyse
-    Returns:
+    Returns:faiss-cpu
         str:  a string in json format confrims if features are found, 
         the confidence in the result and rationale for the result
               or an informative message if no answer is found.
