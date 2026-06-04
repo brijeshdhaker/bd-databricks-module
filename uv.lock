@@ -298,7 +298,7 @@ dev = [
     { name = "databricks-connect" },
     { name = "databricks-dlt" },
     { name = "databricks-langchain" },
-    { name = "databricks-sdk" },
+    { name = "databricks-sdk", extra = ["notebook"] },
     { name = "databricks-sql-connector" },
     { name = "databricks-sqlalchemy" },
     { name = "faiss-cpu" },
@@ -331,7 +331,7 @@ dev = [
     { name = "databricks-connect", specifier = ">=15.4,<15.5" },
     { name = "databricks-dlt" },
     { name = "databricks-langchain", specifier = ">=0.19.0" },
-    { name = "databricks-sdk", specifier = ">=0.112.0" },
+    { name = "databricks-sdk", extras = ["notebook"], specifier = ">=0.113.0" },
     { name = "databricks-sql-connector", specifier = ">=4.2.6" },
     { name = "databricks-sqlalchemy", specifier = ">=2.0.9" },
     { name = "faiss-cpu", specifier = ">=1.14.2" },
@@ -1036,6 +1036,13 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/1d/f5/54a7fa8f9bb292fe1c4095731bb2cf9bbc38ebfe25abbc88657dea34d4ce/databricks_sdk-0.114.0-py3-none-any.whl", hash = "sha256:25a40b83d76fa6c8a621f884da41e45e3ae5267218dafa71db9b363dd9238f57", size = 907537, upload-time = "2026-06-02T09:33:29.541Z" },
 ]
 
+[package.optional-dependencies]
+notebook = [
+    { name = "ipython", version = "8.39.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "ipython", version = "9.14.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "ipywidgets" },
+]
+
 [[package]]
 name = "databricks-sql-connector"
 version = "4.2.6"
@@ -1196,7 +1203,7 @@ name = "exceptiongroup"
 version = "1.3.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "typing-extensions" },
+    { name = "typing-extensions", marker = "python_full_version < '3.11'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/50/79/66800aadf48771f6b62f7eb014e352e5d06856655206165d775e675a02c9/exceptiongroup-1.3.1.tar.gz", hash = "sha256:8b412432c6055b0b7d14c310000ae93352ed6754f70fa8f7c34141f91c4e3219", size = 30371, upload-time = "2025-11-21T23:01:54.787Z" }
 wheels = [
@@ -1606,7 +1613,7 @@ name = "gunicorn"
 version = "26.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "packaging" },
+    { name = "packaging", marker = "python_full_version < '3.12' or sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/6d/b7/a4a3f632f823e432ce6bc65f62961b7980c898c77f075a2f7118cb3846fe/gunicorn-26.0.0.tar.gz", hash = "sha256:ca9346f85e3a4aeeb64d491045c16b9a35647abd37ea15efe53080eb8b090baf", size = 727286, upload-time = "2026-05-05T06:38:25.529Z" }
 wheels = [
