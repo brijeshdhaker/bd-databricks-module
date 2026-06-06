@@ -1,7 +1,7 @@
 [project]
 name = "bd-databricks-module"
 version = "0.1.0"
-description = "Add your description here"
+description = "bd-databricks-module"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
 
@@ -31,7 +31,7 @@ dev = [
     "ruff",
     "sqlalchemy>=2.0.50",
     "unitycatalog-ai[databricks]>=0.3.2",
-    "databricks-cli>=0.18.0",
+    "fastmcp>=3.4.0",
     "faiss-cpu>=1.14.2",
     "faker>=40.21.0",
     "langchain-chroma>=1.0.0",

@@ -56,4 +56,14 @@
         "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.formatOnSave": true,
     },
+    "chat.mcp.serverSampling": {
+        "bd-databricks-module/.vscode/mcp.json: databricks": {
+            "allowedModels": [
+                "copilot/auto",
+                "copilotcli/claude-haiku-4.5",
+                "ollama/Ollama/gemma4:latest",
+                "ollama/Ollama/nomic-embed-text:latest"
+            ]
+        }
+    },
 }
