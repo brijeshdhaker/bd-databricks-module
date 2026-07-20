@@ -8,5 +8,5 @@ from pyspark.sql.functions import col
 
 
 @dp.table
-def sample_trips_bd-databricks-module():
+def sample_trips():
     return spark.read.table("samples.nyctaxi.trips")
